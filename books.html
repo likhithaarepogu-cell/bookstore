@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books - Likhitha Book Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #faf7f4;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #5b3a29;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 27px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffd39b;
+        }
+
+        /* TITLE */
+        .heading {
+            text-align: center;
+            padding: 45px 20px 30px;
+        }
+
+        .heading h2 {
+            color: #5b3a29;
+            font-size: 34px;
+        }
+
+        .heading p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* BOOK GRID */
+        .container {
+            width: 88%;
+            margin: auto;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            padding-bottom: 50px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+        }
+
+        .book-image {
+            position: relative;
+        }
+
+        .book-image img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #5b3a29;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .book-info {
+            padding: 18px;
+        }
+
+        .book-info h3 {
+            color: #5b3a29;
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .author {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .rating {
+            color: #e0a000;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .details-btn,
+        .cart-btn {
+            flex: 1;
+            padding: 10px 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 13px;
+        }
+
+        .details-btn {
+            color: #5b3a29;
+            border: 1px solid #5b3a29;
+            background: white;
+        }
+
+        .cart-btn {
+            color: white;
+            background: #5b3a29;
+            border: 1px solid #5b3a29;
+        }
+
+        .details-btn:hover {
+            background: #f1e7df;
+        }
+
+        .cart-btn:hover {
+            background: #3d261b;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #5b3a29;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .book-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .book-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>Likhitha Book Store</h1>
+
+        <!-- SAME NAVIGATION ON ALL PAGES -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="book.html">Books</a>
+            <a href="categories.html">Categories</a>
+            <a href="book-details.html">Book Details</a>
+            <a href="cart.html">Cart</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+    <section class="heading">
+
+        <h2>Our Books</h2>
+
+        <p>Explore our collection of amazing books</p>
+
+    </section>
+
+
+    <!-- BOOKS -->
+    <div class="container">
+
+        <div class="book-grid">
+
+
+            <!-- BOOK 1 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <span class="tag">Bestseller</span>
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg"
+                        alt="The Alchemist"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Alchemist</h3>
+
+                    <p class="author">Paulo Coelho</p>
+
+                    <p class="rating">★★★★★</p>
+
+                    <p class="price">₹299</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 2 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <span class="tag">Popular</span>
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+                        alt="Atomic Habits"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>Atomic Habits</h3>
+
+                    <p class="author">James Clear</p>
+
+                    <p class="rating">★★★★★</p>
+
+                    <p class="price">₹399</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 3 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <span class="tag">Classic</span>
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+                        alt="1984"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>1984</h3>
+
+                    <p class="author">George Orwell</p>
+
+                    <p class="rating">★★★★☆</p>
+
+                    <p class="price">₹249</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 4 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <span class="tag">Classic</span>
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg"
+                        alt="The Great Gatsby"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Great Gatsby</h3>
+
+                    <p class="author">F. Scott Fitzgerald</p>
+
+                    <p class="rating">★★★★☆</p>
+
+                    <p class="price">₹279</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 5 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg"
+                        alt="Pride and Prejudice"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>Pride and Prejudice</h3>
+
+                    <p class="author">Jane Austen</p>
+
+                    <p class="rating">★★★★★</p>
+
+                    <p class="price">₹349</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 6 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg"
+                        alt="The Little Prince"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Little Prince</h3>
+
+                    <p class="author">Antoine de Saint-Exupéry</p>
+
+                    <p class="rating">★★★★★</p>
+
+                    <p class="price">₹299</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 7 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <span class="tag">New</span>
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780439023481-L.jpg"
+                        alt="The Hunger Games"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>The Hunger Games</h3>
+
+                    <p class="author">Suzanne Collins</p>
+
+                    <p class="rating">★★★★☆</p>
+
+                    <p class="price">₹329</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 8 -->
+            <div class="book-card">
+
+                <div class="book-image">
+
+                    <span class="tag">Popular</span>
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9781408855652-L.jpg"
+                        alt="Harry Potter"
+                    >
+
+                </div>
+
+                <div class="book-info">
+
+                    <h3>Harry Potter</h3>
+
+                    <p class="author">J.K. Rowling</p>
+
+                    <p class="rating">★★★★★</p>
+
+                    <p class="price">₹449</p>
+
+                    <div class="buttons">
+
+                        <a href="book-details.html" class="details-btn">
+                            Details
+                        </a>
+
+                        <a href="cart.html" class="cart-btn">
+                            Add to Cart
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 Likhitha Book Store | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+</html>

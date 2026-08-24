@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Likhitha Book Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5efe6;
+            color: #3e2723;
+        }
+
+        /* Navigation */
+        nav {
+            background: #5d4037;
+            padding: 18px 10px;
+            text-align: center;
+        }
+
+        nav h1 {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e8d5bd;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1050px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Boxes */
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 18px rgba(93, 64, 55, 0.2);
+            flex: 1;
+            min-width: 300px;
+            border-top: 5px solid #795548;
+        }
+
+        h2 {
+            color: #5d4037;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* Form */
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #5d4037;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #c8b6a6;
+            border-radius: 8px;
+            font-size: 15px;
+            background: #fffdf9;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #795548;
+        }
+
+        textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px;
+            background: #6d4c41;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4e342e;
+        }
+
+        /* Footer */
+        footer {
+            background: #5d4037;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .container {
+                margin: 25px auto;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h1>📚 Likhitha Book Store</h1>
+
+        <a href="index.html">Home</a>
+        <a href="book.html">Book</a>
+        <a href="categories.html">Categories</a>
+        <a href="book details.html">Book Details</a>
+        <a href="cart.html">Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Contact Section -->
+    <div class="container">
+
+        <div class="box">
+            <h2>Contact Us</h2>
+
+            <p>
+                Have any questions? We are happy to help you.
+                Contact Likhitha Book Store for any information.
+            </p>
+
+            <p>
+                📍 <b>Address:</b><br>
+                Likhitha Book Store, Andhra Pradesh, India
+            </p>
+
+            <p>
+                📞 <b>Phone:</b><br>
+                +91 98765 43210
+            </p>
+
+            <p>
+                ✉️ <b>Email:</b><br>
+                likhithabookstore@gmail.com
+            </p>
+
+            <p>
+                🕒 <b>Working Hours:</b><br>
+                Monday - Saturday: 9:00 AM - 7:00 PM
+            </p>
+        </div>
+
+        <div class="box">
+            <h2>Send a Message</h2>
+
+            <form>
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" required>
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" required>
+
+                <label>Subject</label>
+                <input type="text" placeholder="Enter subject" required>
+
+                <label>Message</label>
+                <textarea placeholder="Write your message..." required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Likhitha Book Store | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

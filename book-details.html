@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details - Likhitha Book Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #faf7f4;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #5b3a29;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 27px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffd39b;
+        }
+
+        /* PAGE TITLE */
+        .heading {
+            text-align: center;
+            padding: 45px 20px 30px;
+        }
+
+        .heading h2 {
+            color: #5b3a29;
+            font-size: 34px;
+        }
+
+        .heading p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* BOOK DETAILS */
+        .container {
+            width: 88%;
+            margin: auto;
+        }
+
+        .book-details {
+            background: white;
+            padding: 35px;
+            margin-bottom: 35px;
+            border-radius: 14px;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 45px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+        }
+
+        /* GALLERY */
+        .gallery {
+            text-align: center;
+        }
+
+        .main-image {
+            width: 280px;
+            height: 390px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .small-images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .small-images img {
+            width: 70px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #ddd;
+        }
+
+        .small-images img:hover {
+            border-color: #5b3a29;
+        }
+
+        /* INFORMATION */
+        .info h2 {
+            color: #5b3a29;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .author {
+            color: #777;
+            margin-bottom: 12px;
+        }
+
+        .rating {
+            color: #e0a000;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 27px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .stock {
+            color: green;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .description h3 {
+            color: #5b3a29;
+            margin-bottom: 8px;
+        }
+
+        .description p {
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .book-info {
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .book-info p {
+            margin: 8px 0;
+        }
+
+        .book-info strong {
+            color: #5b3a29;
+        }
+
+        /* BUTTONS */
+        .buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .cart-btn,
+        .wish-btn {
+            padding: 12px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .cart-btn {
+            background: #5b3a29;
+            color: white;
+        }
+
+        .wish-btn {
+            border: 1px solid #5b3a29;
+            color: #5b3a29;
+            background: white;
+        }
+
+        .cart-btn:hover {
+            background: #3d261b;
+        }
+
+        .wish-btn:hover {
+            background: #f1e7df;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 50px;
+            background: #5b3a29;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .book-details {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .book-info {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .main-image {
+                width: 230px;
+                height: 320px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>Likhitha Book Store</h1>
+
+        <!-- SAME NAVIGATION ON ALL PAGES -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="book.html">Books</a>
+            <a href="categories.html">Categories</a>
+            <a href="book-details.html">Book Details</a>
+            <a href="cart.html">Cart</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+    <section class="heading">
+
+        <h2>Book Details</h2>
+
+        <p>Explore our books in detail</p>
+
+    </section>
+
+
+    <div class="container">
+
+
+        <!-- BOOK 1 -->
+        <div class="book-details">
+
+            <div class="gallery">
+
+                <img
+                    class="main-image"
+                    src="https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg"
+                    alt="The Alchemist"
+                >
+
+                <div class="small-images">
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780062315007-S.jpg"
+                        alt="The Alchemist"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780062315007-M.jpg"
+                        alt="The Alchemist"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg"
+                        alt="The Alchemist"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <h2>The Alchemist</h2>
+
+                <p class="author">By Paulo Coelho</p>
+
+                <p class="rating">★★★★★ 4.8/5</p>
+
+                <p class="price">₹299</p>
+
+                <p class="stock">✓ In Stock</p>
+
+
+                <div class="description">
+
+                    <h3>About the Book</h3>
+
+                    <p>
+                        The Alchemist is a famous novel about dreams,
+                        courage, hope and following your heart. It tells
+                        the story of Santiago and his journey to discover
+                        his dream.
+                    </p>
+
+                </div>
+
+
+                <div class="book-info">
+
+                    <p><strong>Publisher:</strong> HarperCollins</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Pages:</strong> 208</p>
+                    <p><strong>Format:</strong> Paperback</p>
+                    <p><strong>Category:</strong> Fiction</p>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <a href="cart.html" class="cart-btn">
+                        Add to Cart
+                    </a>
+
+                    <a href="wishlist.html" class="wish-btn">
+                        Add to Wishlist
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 2 -->
+        <div class="book-details">
+
+            <div class="gallery">
+
+                <img
+                    class="main-image"
+                    src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+                    alt="Atomic Habits"
+                >
+
+                <div class="small-images">
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780735211292-S.jpg"
+                        alt="Atomic Habits"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg"
+                        alt="Atomic Habits"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+                        alt="Atomic Habits"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <h2>Atomic Habits</h2>
+
+                <p class="author">By James Clear</p>
+
+                <p class="rating">★★★★★ 4.9/5</p>
+
+                <p class="price">₹399</p>
+
+                <p class="stock">✓ In Stock</p>
+
+
+                <div class="description">
+
+                    <h3>About the Book</h3>
+
+                    <p>
+                        Atomic Habits explains how small changes in
+                        everyday habits can create remarkable results.
+                        It provides practical ideas for building good
+                        habits and breaking bad ones.
+                    </p>
+
+                </div>
+
+
+                <div class="book-info">
+
+                    <p><strong>Publisher:</strong> Avery</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Pages:</strong> 320</p>
+                    <p><strong>Format:</strong> Paperback</p>
+                    <p><strong>Category:</strong> Self Help</p>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <a href="cart.html" class="cart-btn">
+                        Add to Cart
+                    </a>
+
+                    <a href="wishlist.html" class="wish-btn">
+                        Add to Wishlist
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 3 -->
+        <div class="book-details">
+
+            <div class="gallery">
+
+                <img
+                    class="main-image"
+                    src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+                    alt="1984"
+                >
+
+                <div class="small-images">
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780451524935-S.jpg"
+                        alt="1984"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780451524935-M.jpg"
+                        alt="1984"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+                        alt="1984"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <h2>1984</h2>
+
+                <p class="author">By George Orwell</p>
+
+                <p class="rating">★★★★☆ 4.6/5</p>
+
+                <p class="price">₹249</p>
+
+                <p class="stock">✓ In Stock</p>
+
+
+                <div class="description">
+
+                    <h3>About the Book</h3>
+
+                    <p>
+                        1984 is a classic dystopian novel that explores
+                        surveillance, government control, freedom and
+                        individual thought.
+                    </p>
+
+                </div>
+
+
+                <div class="book-info">
+
+                    <p><strong>Publisher:</strong> Penguin Classics</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Pages:</strong> 328</p>
+                    <p><strong>Format:</strong> Paperback</p>
+                    <p><strong>Category:</strong> Classic</p>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <a href="cart.html" class="cart-btn">
+                        Add to Cart
+                    </a>
+
+                    <a href="wishlist.html" class="wish-btn">
+                        Add to Wishlist
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOK 4 -->
+        <div class="book-details">
+
+            <div class="gallery">
+
+                <img
+                    class="main-image"
+                    src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg"
+                    alt="The Great Gatsby"
+                >
+
+                <div class="small-images">
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780743273565-S.jpg"
+                        alt="The Great Gatsby"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780743273565-M.jpg"
+                        alt="The Great Gatsby"
+                    >
+
+                    <img
+                        src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg"
+                        alt="The Great Gatsby"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="info">
+
+                <h2>The Great Gatsby</h2>
+
+                <p class="author">By F. Scott Fitzgerald</p>
+
+                <p class="rating">★★★★☆ 4.7/5</p>
+
+                <p class="price">₹279</p>
+
+                <p class="stock">✓ In Stock</p>
+
+
+                <div class="description">
+
+                    <h3>About the Book</h3>
+
+                    <p>
+                        The Great Gatsby is a classic story about love,
+                        wealth, dreams and life during the Jazz Age.
+                    </p>
+
+                </div>
+
+
+                <div class="book-info">
+
+                    <p><strong>Publisher:</strong> Scribner</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Pages:</strong> 180</p>
+                    <p><strong>Format:</strong> Paperback</p>
+                    <p><strong>Category:</strong> Classic</p>
+
+                </div>
+
+
+                <div class="buttons">
+
+                    <a href="cart.html" class="cart-btn">
+                        Add to Cart
+                    </a>
+
+                    <a href="wishlist.html" class="wish-btn">
+                        Add to Wishlist
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 Likhitha Book Store | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+</html>

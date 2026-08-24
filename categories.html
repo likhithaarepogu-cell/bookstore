@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Categories - Likhitha Book Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #faf7f4;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background: #5b3a29;
+            color: white;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 27px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #ffd39b;
+        }
+
+        /* TITLE */
+        .heading {
+            text-align: center;
+            padding: 45px 20px 15px;
+        }
+
+        .heading h2 {
+            color: #5b3a29;
+            font-size: 34px;
+        }
+
+        .heading p {
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* CATEGORIES */
+        .container {
+            width: 88%;
+            margin: 35px auto 60px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .category-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .category-content {
+            padding: 20px;
+        }
+
+        .category-content h3 {
+            color: #5b3a29;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .category-content p {
+            color: #777;
+            line-height: 1.5;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .view-btn {
+            display: inline-block;
+            background: #5b3a29;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .view-btn:hover {
+            background: #3d261b;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #5b3a29;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+
+        <h1>Likhitha Book Store</h1>
+
+        <!-- SAME NAVIGATION -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="book.html">Books</a>
+            <a href="categories.html">Categories</a>
+            <a href="book-details.html">Book Details</a>
+            <a href="cart.html">Cart</a>
+            <a href="wishlist.html">Wishlist</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+
+
+    <!-- PAGE TITLE -->
+    <section class="heading">
+
+        <h2>Book Categories</h2>
+
+        <p>Find books based on your interests</p>
+
+    </section>
+
+
+    <!-- CATEGORY CARDS -->
+    <div class="container">
+
+        <div class="category-grid">
+
+
+            <!-- Fiction -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=600&q=80"
+                    alt="Fiction Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Fiction</h3>
+
+                    <p>
+                        Explore exciting stories, adventures and
+                        imaginative worlds.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Self Help -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80"
+                    alt="Self Help Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Self Help</h3>
+
+                    <p>
+                        Books to improve your habits, confidence,
+                        mindset and personal growth.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Classics -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80"
+                    alt="Classic Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Classics</h3>
+
+                    <p>
+                        Discover timeless stories and famous
+                        literary masterpieces.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Mystery -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=600&q=80"
+                    alt="Mystery Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Mystery</h3>
+
+                    <p>
+                        Enjoy thrilling mysteries, suspense and
+                        unforgettable investigations.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Romance -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=600&q=80"
+                    alt="Romance Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Romance</h3>
+
+                    <p>
+                        Beautiful stories about love, relationships
+                        and emotions.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Adventure -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=600&q=80"
+                    alt="Adventure Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Adventure</h3>
+
+                    <p>
+                        Travel through exciting journeys,
+                        challenges and discoveries.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Biography -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=600&q=80"
+                    alt="Biography Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Biography</h3>
+
+                    <p>
+                        Read inspiring stories about remarkable
+                        people and their lives.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Children's Books -->
+            <div class="category-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                    alt="Children Books"
+                >
+
+                <div class="category-content">
+
+                    <h3>Children's Books</h3>
+
+                    <p>
+                        Fun, educational and imaginative books
+                        for young readers.
+                    </p>
+
+                    <a href="book.html" class="view-btn">
+                        View Books
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© 2026 Likhitha Book Store | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+</html>
